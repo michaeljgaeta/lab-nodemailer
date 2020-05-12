@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const router = new Router();
+const randomToken = require('random-token');
 
 const User = require('./../models/user');
 const bcryptjs = require('bcryptjs');
@@ -20,7 +21,8 @@ router.post('/sign-up', (req, res, next) => {
       return User.create({
         name,
         email,
-        passwordHash: hash
+        passwordHash: hash,
+        confirmationCode: randomToken.salt()
       });
     })
     .then(user => {
