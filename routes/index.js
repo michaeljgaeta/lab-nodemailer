@@ -27,7 +27,7 @@ router.get('/private', (req, res, next) => {
 });
 
 //send an email with a promise sequence
-transporter
+/*transporter
   .sendMail({
     from: `LAB TEST <${process.env.NODEMAILER_EMAIL}>`,
     to: "ih174test@gmail.com",
@@ -42,6 +42,6 @@ transporter
   .catch((error) => {
     console.log("There was an error sending the email.");
     console.log(error);
-  });
+  });*/
 
 module.exports = router;
